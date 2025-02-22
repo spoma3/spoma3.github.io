@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 4641 Group #47 Team Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        hr {
+            border: 1px solid #ddd;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Want to watch our unlisted YouTube video on this topic? <a href="https://youtu.be/Uc_2V9tAKqM">Click here</a></h2>
+    <hr>
+
+    <div class="image-container">
+        <img src="SoyBeanImage.jpg" alt="Soybean Farm" width="450">
+        <p><i>Soybean Farm</i></p>
+    </div>
+
+    <h1>Introduction/Background</h1>
+    <h2>Literature Review</h2>
+    <p>"Our topic of choice is Advanced Soybean Agriculture, more specifically predicting soybean yield based on salicylic acid treatment, genotype, and water stress. Pre–existing research has found that salicylic acid treatments of 100-200 parts per million result in significantly higher soybean yields [1]. Furthermore, genotypes with larger roots systems tend to have water retention rates, which also results in higher yields [2]. Higher levels of water stress are often associated with lower plant height and weight, leaf size, and overall seed yield [3].</p>
+
+    <h2>Dataset Description</h2>
+    <p>Our dataset is “Advanced Soybean Agricultural Dataset” from Kaggle. This dataset consists of parameters including genotype, salicylic acid treatment, and water stress. There are 6 different genotypes, 3 levels of salicylic acid treatment: 250 mg, 450 mg, and 0 mg, and 2 levels of water stress: 5% and 70%. Furthermore, the dataset shows various quantitative metrics based on parameters such as plant height, biological weight, number of pods, and many others.</p>
+    <p><a href="https://www.kaggle.com/datasets/wisam1985/advanced-soybean-agricultural-dataset-2025">Dataset Link</a></p>
+
+    <h2>Problem Definition</h2>
+    <h3>Problem</h3>
+    <p>Using current agricultural practices, it is difficult to predict and optimize soybean yield and health. This leads to inconsistencies that can potentially cause supply chain disruptions, price instability, inefficient allocation of resources, and an overall decline in quality and output. With the soybean industry already fraught with supply chain bottlenecks, it is imperative to determine the most efficient method to yield the highest quantity and quality of soybeans in order to meet rising global demand.</p>
+
+    <h3>Methods</h3>
+    <p>TTo preprocess the data, normalization with sklearn.ensemble library’s preprocess.normalize() function will scale features to a common range, preventing certain features from overly dominating in weights and loss functions, and making outlier detection easier [4]. The next step involves using scipy.stats library’s zscore() function to remove outliers preventing their distorting impacts on loss functions [5]. Finally, unique feature reduction algorithms will be employed for all three supervised ML algorithms to reduce dimensionality and computational complexity [6]. For Random Forest, sklearn.ensemble library’s RandomForestRegressor() function will be utilized to identify features for future removal, leveraging Random Forest’s strong tolerance for outliers and inherent feature reduction capabilities [7], [8]. This allows for immediate implementation of Random Forest after normalization, creating baseline predictions and giving a feature importance ranking for the midterm report [9]. Subsequently, a Neural Network can be implemented to identify complex interactions between variables and further improve model accuracy, with sklearn.inspection library’s permutation_importance() function preventing overfitting, improving the neural networks accuracy [10].  Lastly, a Bayesian Neural Network (BNN) will be created to complement the high accuracy of the Neural Network and Random Forest while addressing areas of high uncertainty [11]. Sklearn.decomposition library’s PCA() function will be used for the BNN’s dimensionality reduction, enhancing speed while retaining variance and preserving the underlying uncertainty in the model’s predictions [12].</p>
+
+    <h3>Potential Results and Discussion</h3>
+    <h4>Quantitative Metrics</h4>
+    <ul>
+        <li>R² score</li>
+        <li>Root Mean Squared Error</li>
+        <li>Accuracy Score</li>
+    </ul>
+
+    <h3>Project Goals</h3>
+    <ul>
+        <li>1. Achieve at least 90% accuracy in predicting protein soybean yield (protein % * biological weight) or other plant characteristics.</li>
+        <li>2. Help identify optimal salicylic acid treatment, genotype, water stress and other characteristics of soybean plants for optimal protein yields or other types of plant yields.</li>
+    </ul>
+
+    <h3>Expected Results</h3>
+    <p>We expect our model to predict the soybean protein yield (protein % * biological yield) given a combination of salicylic acid treatment, genotype, and water stress levels and other plant characteristics.</p>
+
+    <div class="image-container">
+        <img src="Contributions Image.png" alt="Contributions" width="300">
+        <p><i>Contributions</i></p>
+    </div>
+
+    <div class="image-container">
+        <img src="Gantt Chart Image.png" alt="Gantt Chart" width="100%">
+        <p><i>Gantt Chart</i></p>
+    </div>
+
+    <h3>References</h3>
+        <p>[1]P. Kuchlan and M.K. Kuchlan, “Effect of Salicylic Acid on Plant Physiological and Yield Traits of Soybean,” Legume Research - An International Journal, no. Of, Mar. 2021, doi: https://doi.org/10.18805/lr-4527.</p>
+        <p>[2]Nisarga Kodadinne Narayana, Chathurika Wijewardana, F. A. Alsajri, K. Raja Reddy, S. R. Stetina, and Raju Bheemanahalli, “Resilience of soybean genotypes to drought stress during the early vegetative stage,” Scientific Reports, vol. 14, no. 1, Jul. 2024, doi: https://doi.org/10.1038/s41598-024-67930-w.</p>
+        <p>[3]M. S. Hossain et al., “Differential Drought Responses of Soybean Genotypes in Relation to Photosynthesis and Growth-Yield Attributes,” Plants, vol. 13, no. 19, pp. 2765–2765, Oct. 2024, doi: https://doi.org/10.3390/plants13192765.</p>
+        <p>[4] S. Jaiswal, “What is normalization in machine learning? A comprehensive guide to data rescaling,” DataCamp, https://www.datacamp.com/tutorial/normalization-in-machine-learning (accessed Feb. 20, 2025).</p>
+        <p>[5] “Normalize,” scikit, https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.normalize.html (accessed Feb. 20, 2025).</p>
+        <p>[6] “Primary supervised learning algorithms used in Machine Learning: Exxact blog,” Exxact, https://www.exxactcorp.com/blog/Deep-Learning/primary-supervised-learning-algorithms-used-in-machine-learning (accessed Feb. 20, 2025).</p>
+        <p>[7] “Randomforestregressor,” scikit, https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html (accessed Feb. 20, 2025).</p>
+        <p>[8] “What is Random Forest?,” IBM, https://www.ibm.com/think/topics/random-forest (accessed Feb. 20, 2025).</p>
+        <p>[9] L. Hardester, “Explained: Neural networks,” MIT News | Massachusetts Institute of Technology, https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414 (accessed Feb. 20, 2025).</p>
+        <p>[10] “4.2. permutation feature importance,” scikit, https://scikit-learn.org/stable/modules/permutation_importance.html (accessed Feb. 20, 2025).</p>
+        <p>[11] J. Q. Yu, E. Creager, D. Duvenaud, and J. Bettencourt, Bayesian Neural Networks, https://www.cs.toronto.edu/~duvenaud/distill_bayes_net/public/ (accessed Feb. 20, 2025).</p>
+        <p>[12] L. Sturlaugson, “Principal component analysis preprocessing with Bayesian networks ...,” Principal Component Analysis Preprocessing with Bayesian Networks for Battery Capacity Estimation, https://www.cs.montana.edu/sheppard/pubs/i2mtc-2013.pdf (accessed Feb. 21, 2025).</p>
+
+</div>
+
+</body>
+</html>
